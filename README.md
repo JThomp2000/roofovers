@@ -40,8 +40,10 @@ To activate the automated email system and ensure your website is fully function
   - **Framework preset**: `Create React App`
   - **Build command**: `npm run build`
   - **Build output directory**: `build`
-- **Avoid "Deploy" Scripts**: If your dashboard has a **Deploy command** setting, it should be **blank**. Some systems automatically try to run a script named `deploy` if they find it in `package.json`, which often causes the "Worker script" error you've seen. We have renamed our manual deployment script to `pages:deploy` to prevent this conflict.
-- **Project Type**: Ensure your project is created as a **Pages** project in Cloudflare, not a Worker.
+- **Wrangler Conflict Resolution**: We have removed the `wrangler.toml` file from the project root. Cloudflare's dashboard sometimes detects this file and incorrectly attempts to deploy the project as a **Worker** (using `npx wrangler deploy`) instead of a **Pages** project. Removing it ensures Cloudflare uses its standard Pages deployment flow.
+- **Deploy command**: If your dashboard has a separate "Deploy command" setting, it MUST be **blank**.
+- **Project Type**: Ensure your project is created as a **Pages** project in Cloudflare, not a Worker. If you accidentally created it as a Worker, you should delete it and create a new project using the **Pages** tab.
+- **Compatibility Date**: In **Settings > Functions > Compatibility date**, ensure it is set to `2024-04-12` or newer.
 - Redeploy your site to apply the changes.
 - Fill out the contact form to verify you receive the lead at `info@roofovers.com` and that the customer receives a branded "Thank You" message.
 
@@ -89,4 +91,3 @@ To run the project locally for development or testing:
 - `src/components/`: React UI components (Header, Footer, Hero, Services, JobPhotos, Testimonials, FAQ, Brochures, ContactForm).
 - `functions/api/contact.ts`: Cloudflare Pages Function that handles form submissions and triggers emails.
 - `public/`: Static assets including brand logos, partner logos, and favicons.
-- `wrangler.toml`: Cloudflare configuration for deployment.

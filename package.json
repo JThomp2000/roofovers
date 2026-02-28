@@ -30,7 +30,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "pages:build": "npm run build",
-    "pages:deploy": "wrangler pages deploy build"
+    "pages:deploy": "wrangler pages deploy build --project-name=roofovers",
+    "pages:dev": "wrangler pages dev build --project-name=roofovers"
   },
   "eslintConfig": {
     "extends": [
