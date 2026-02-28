@@ -40,6 +40,23 @@ To activate the automated email system and ensure your website is fully function
 
 ---
 
+### Deployment
+
+To deploy the website to Cloudflare Pages:
+
+1. **Build the project**:
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy with Wrangler**:
+   ```bash
+   npm run deploy
+   ```
+   (This command runs `wrangler pages deploy build` internally.)
+
+---
+
 ### Local Development
 
 To run the project locally for development or testing:
