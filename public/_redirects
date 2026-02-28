@@ -1,1 +1,4 @@
-/*  /index.html  200
+# SPA Fallback: Rewrites all non-existent paths to index.html to support React Router.
+# We avoid using '/*' to prevent an infinite loop error [code: 10021] at the root.
+/:path/* /index.html 200
+/:path /index.html 200
