@@ -34,15 +34,21 @@ To activate the automated email system and ensure your website is fully function
   - **Value**: [Paste your API key from Resend]
 - Save the changes.
 
-#### 4. Final Verification
-- Redeploy your site to apply the new environment variables.
+#### 4. Final Verification & Cloudflare Pages Settings
+- **Crucial**: In your Cloudflare Pages Dashboard, navigate to **Settings > Build & deployments**.
+- Ensure the following **Build settings** are configured:
+  - **Framework preset**: `Create React App` (or `None`)
+  - **Build command**: `npm run build`
+  - **Build output directory**: `build`
+- **Important**: If you see a **Deploy command** setting, ensure it is either **blank** (letting Cloudflare handle it) or set to `npm run deploy`. The generic `npx wrangler deploy` will *not* work as it is designed for Workers, not Pages.
+- Redeploy your site to apply the changes.
 - Fill out the contact form to verify you receive the lead at `info@roofovers.com` and that the customer receives a branded "Thank You" message.
 
 ---
 
-### Deployment
+### Deployment (CLI)
 
-To deploy the website to Cloudflare Pages:
+To manually deploy the website via the command line:
 
 1. **Build the project**:
    ```bash
@@ -53,7 +59,7 @@ To deploy the website to Cloudflare Pages:
    ```bash
    npm run deploy
    ```
-   (This command runs `wrangler pages deploy build` internally.)
+   (This command runs `wrangler pages deploy build` internally. Do *not* run `npx wrangler deploy` alone, as it will error on a Pages project.)
 
 ---
 
