@@ -37,10 +37,11 @@ To activate the automated email system and ensure your website is fully function
 #### 4. Final Verification & Cloudflare Pages Settings
 - **Crucial**: In your Cloudflare Pages Dashboard, navigate to **Settings > Build & deployments**.
 - Ensure the following **Build settings** are configured:
-  - **Framework preset**: `Create React App` (or `None`)
+  - **Framework preset**: `Create React App`
   - **Build command**: `npm run build`
   - **Build output directory**: `build`
-- **Important**: If you see a **Deploy command** setting, ensure it is either **blank** (letting Cloudflare handle it) or set to `npm run deploy`. The generic `npx wrangler deploy` will *not* work as it is designed for Workers, not Pages.
+- **Avoid "Deploy" Scripts**: If your dashboard has a **Deploy command** setting, it should be **blank**. Some systems automatically try to run a script named `deploy` if they find it in `package.json`, which often causes the "Worker script" error you've seen. We have renamed our manual deployment script to `pages:deploy` to prevent this conflict.
+- **Project Type**: Ensure your project is created as a **Pages** project in Cloudflare, not a Worker.
 - Redeploy your site to apply the changes.
 - Fill out the contact form to verify you receive the lead at `info@roofovers.com` and that the customer receives a branded "Thank You" message.
 
@@ -57,7 +58,7 @@ To manually deploy the website via the command line:
 
 2. **Deploy with Wrangler**:
    ```bash
-   npm run deploy
+   npm run pages:deploy
    ```
    (This command runs `wrangler pages deploy build` internally. Do *not* run `npx wrangler deploy` alone, as it will error on a Pages project.)
 
