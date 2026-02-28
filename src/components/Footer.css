@@ -1,0 +1,149 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 4rem 0 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand-logo {
+  height: auto;
+  max-height: 80px;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.footer-brand-logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer-cs-logo, .footer-roof-logo {
+  max-height: 70px;
+}
+
+.footer-brand p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-links h3::after, .footer-contact h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #ff5722;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #ff5722;
+}
+
+.footer-contact p {
+  color: #ccc;
+  margin-bottom: 0.8rem;
+}
+
+.footer-tel a, .footer-email a {
+  color: #ff5722;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-support {
+  margin-top: 1.5rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+
+.footer-support .support-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.footer-partners-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-partner-logo {
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.footer-duke-logo, .footer-estar-logo, .footer-gaf-logo { max-height: 35px; }
+
+.footer-partner-logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.footer-license {
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #bbb !important;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

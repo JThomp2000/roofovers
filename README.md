@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+# CSRS Roofovers - Modernized Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a modernized React/TypeScript version of the `roofovers.com` website, specifically designed for deployment on Cloudflare Pages.
 
-## Available Scripts
+### Features
+- **Responsive Design**: Optimized for both mobile and desktop viewports.
+- **Automated Lead Handling**: Integrated contact form with automated email responses using Cloudflare Pages Functions and Resend.
+- **Project Portfolio**: A modern "Job Photos" section showcasing company work.
+- **Customer Testimonials**: A responsive grid of real customer reviews.
+- **Product Information**: Dedicated sections for FAQ, product brochures, and accepted payment methods.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### Setup & Deployment Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To activate the automated email system and ensure your website is fully functional, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### 1. Configure Business Email
+- Log in to your **Cloudflare Dashboard**.
+- Go to the **Email** tab for `roofovers.com`.
+- Enable **Email Routing**.
+- Set up a destination address for `info@roofovers.com` to forward to your personal inbox.
 
-### `npm test`
+#### 2. Set Up Email Provider (Resend)
+- Sign up for a free account at [resend.com](https://resend.com).
+- Add your domain (`roofovers.com`) in the Resend dashboard.
+- **Crucial**: Copy the DNS records (DKIM/SPF) provided by Resend and add them to your **Cloudflare DNS** settings. This ensures your automated emails land in customers' inboxes rather than spam.
+- Create an **API Key** in Resend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 3. Link the Website to the Email Service
+- In your **Cloudflare Pages project settings**, navigate to **Settings > Functions > Environment variables**.
+- Add a new variable:
+  - **Key**: `RESEND_API_KEY`
+  - **Value**: [Paste your API key from Resend]
+- Save the changes.
 
-### `npm run build`
+#### 4. Final Verification
+- Redeploy your site to apply the new environment variables.
+- Fill out the contact form to verify you receive the lead at `info@roofovers.com` and that the customer receives a branded "Thank You" message.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Local Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run the project locally for development or testing:
 
-### `npm run eject`
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Start the Development Server**:
+   ```bash
+   npm start
+   ```
+   (Runs the app at [http://localhost:3000](http://localhost:3000))
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Build for Production**:
+   ```bash
+   npm run build
+   ```
+   (Outputs the optimized production files to the `build` folder)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Project Structure
+- `src/components/`: React UI components (Header, Footer, Hero, Services, JobPhotos, Testimonials, FAQ, Brochures, ContactForm).
+- `functions/api/contact.ts`: Cloudflare Pages Function that handles form submissions and triggers emails.
+- `public/`: Static assets including brand logos, partner logos, and favicons.
+- `wrangler.toml`: Cloudflare configuration for deployment.

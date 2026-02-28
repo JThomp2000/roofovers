@@ -1,0 +1,309 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.top-bar {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-item {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.top-bar-link:hover {
+  color: #ff5722;
+}
+
+.phone-icon {
+  color: #ff5722;
+  margin-right: 2px;
+}
+
+.contact-text {
+  font-weight: 400;
+}
+
+.license-text {
+  font-weight: 600;
+  color: #ccc;
+}
+
+.header-brand {
+  padding: 1.5rem 0;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.header-brand-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.brand-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.brand-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.brand-logo-img {
+  height: auto;
+  max-height: 140px;
+  max-width: 100%;
+  display: block;
+}
+
+.cs-logo {
+  max-height: 130px;
+}
+
+.roofovers-logo {
+  max-height: 130px;
+}
+
+.brand-partners {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.partners-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.partners-logos-stack {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.partner-logo {
+  height: auto;
+  max-height: 40px;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.partner-logo:hover {
+  opacity: 1;
+}
+
+.duke-logo, .estar-logo, .gaf-logo { max-height: 40px; }
+
+
+@media (max-width: 768px) {
+  .top-bar-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+  }
+  .header-brand-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .brand-left, .brand-center {
+    flex: none;
+    width: auto;
+  }
+  .brand-right {
+    display: none;
+  }
+  .brand-logo-img {
+    max-height: 75px;
+    width: auto;
+  }
+  .cs-logo {
+    max-height: 85px;
+  }
+  .roofovers-logo {
+    max-height: 75px;
+  }
+
+  .header-container {
+    justify-content: space-between;
+  }
+  .logo-text-mobile {
+    display: block;
+  }
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-open {
+    height: 350px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+.header-nav-container {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 0;
+  z-index: 1001;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.logo-text-mobile {
+  display: none;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ff5722;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover {
+  color: #ff5722;
+}
+
+.contact-btn {
+  background-color: #ff5722;
+  color: white !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s !important;
+}
+
+.contact-btn:hover {
+  background-color: #e64a19 !important;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  left: 0;
+  transition: transform 0.3s;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+.hamburger-open {
+  background-color: transparent;
+}
+
+.hamburger-open::before {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger-open::after {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+

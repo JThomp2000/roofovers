@@ -1,0 +1,110 @@
+.services {
+  padding: 5rem 0;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card {
+  flex: 0 1 350px;
+  min-width: 280px;
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 87, 34, 0.1);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.icon-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background-color: #ff5722;
+  border-radius: 4px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.service-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-link {
+  color: #ff5722;
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.3s;
+}
+
+.service-link:hover {
+  opacity: 0.8;
+}
+
+.payment-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.payment-logo {
+  height: 42px;
+  width: 70px;
+  object-fit: contain;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.payment-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
