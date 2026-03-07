@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "wrangler": "^4.69.0"
+    "wrangler": "^4.71.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,7 +31,9 @@
     "eject": "react-scripts eject",
     "pages:build": "npm run build",
     "pages:deploy": "wrangler pages deploy build --project-name=roofovers",
-    "pages:dev": "wrangler pages dev build --project-name=roofovers"
+    "pages:dev": "wrangler pages dev build --project-name=roofovers",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
   },
   "eslintConfig": {
     "extends": [
