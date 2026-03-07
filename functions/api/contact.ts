@@ -13,9 +13,21 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     const data = await request.json() as any;
     const { name, email, phone, message, serviceType } = data;
 
+    // Validate required fields
+    if (!name || !email || !phone || !message) {
+      return new Response(JSON.stringify({ error: "Please fill out all required fields." }), { status: 400 });
+    }
+
     // Validate email
-    if (!email || !email.includes('@')) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
       return new Response(JSON.stringify({ error: "Invalid email address" }), { status: 400 });
+    }
+
+    // Validate phone (at least 10 digits)
+    const phoneDigits = phone.replace(/[^\d]/g, '');
+    if (phoneDigits.length < 10) {
+      return new Response(JSON.stringify({ error: "Invalid phone number. Please provide a 10-digit phone number." }), { status: 400 });
     }
 
     // 1. Email to the Business (Lead Notification)
