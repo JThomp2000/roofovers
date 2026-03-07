@@ -132,11 +132,9 @@ const ContactForm: React.FC = () => {
                 value={formData.serviceType} 
                 onChange={handleChange}
               >
-                <option value="Residential">Residential Roofing</option>
-                <option value="Commercial">Commercial Roofing</option>
+                <option value="Estimate">Free Estimate</option>
                 <option value="Manufactured">Manufactured Home Roofing</option>
                 <option value="Repair">Roof Repair</option>
-                <option value="Estimate">Free Estimate</option>
               </select>
             </div>
 
