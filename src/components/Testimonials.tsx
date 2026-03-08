@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Helmet } from 'react-helmet-async';
 import './Testimonials.css';
 
 const testimonials = [
@@ -33,6 +34,11 @@ const Testimonials: React.FC = () => {
 
   return (
     <section id="testimonials" className="testimonials">
+      <Helmet>
+        <title>Customer Testimonials | Roofovers</title>
+        <meta name="description" content="Read reviews from over 13,000 satisfied customers. See why homeowners trust Roofovers for their roofing needs." />
+        <link rel="canonical" href="https://roofovers.com/testimonials" />
+      </Helmet>
       <div className="container">
         <h2 className="section-title">What Our Customers Say</h2>
         <div className="testimonials-grid">

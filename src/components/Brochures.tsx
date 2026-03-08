@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Helmet } from 'react-helmet-async';
 import './Brochures.css';
 
 const brochurePanels = [
@@ -21,6 +22,11 @@ const Brochures: React.FC = () => {
 
   return (
     <section id="brochures" className="brochures">
+      <Helmet>
+        <title>Product Brochures | Roofing Material Specs | Roofovers</title>
+        <meta name="description" content="View our product brochures to learn about our energy-efficient membrane roofing systems, insulation benefits, and maintenance-free solutions." />
+        <link rel="canonical" href="https://roofovers.com/brochures" />
+      </Helmet>
       <div className="container">
         <h2 className="section-title">Product Brochures</h2>
         <p className="section-description">

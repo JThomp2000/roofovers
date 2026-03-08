@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Helmet } from 'react-helmet-async';
 import './JobPhotos.css';
 
 const jobs = [
@@ -55,6 +56,11 @@ const JobPhotos: React.FC = () => {
 
   return (
     <section id="jobs" className="job-photos">
+      <Helmet>
+        <title>Job Photos | Roofing Projects by Roofovers</title>
+        <meta name="description" content="View our portfolio of membrane roofing projects, including before and after photos of manufactured and modular homes." />
+        <link rel="canonical" href="https://roofovers.com/job-photos" />
+      </Helmet>
       <div className="container">
         <h2 className="section-title">Our Work - Job Photos</h2>
         <p className="section-description">
