@@ -40,17 +40,20 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       body: JSON.stringify({
         from: "CSRS Leads <leads@roofovers.com>",
         to: ["info@roofovers.com"],
+        reply_to: email, // Set reply_to to the customer's email so replying goes directly to them
         subject: `New Lead: ${name} - ${serviceType}`,
         html: `
-          <h2>New Roofing Estimate Request</h2>
-          <p><strong>Customer Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Service Interest:</strong> ${serviceType}</p>
-          <p><strong>Message:</strong></p>
-          <p style="white-space: pre-wrap;">${message}</p>
-          <hr />
-          <p><small>This lead was generated from the contact form on roofovers.com</small></p>
+          <div style="font-family: sans-serif; line-height: 1.6; color: #333;">
+            <h2>New Roofing Estimate Request</h2>
+            <p><strong>Customer Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Service Interest:</strong> ${serviceType}</p>
+            <p><strong>Message:</strong></p>
+            <p style="white-space: pre-wrap; background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #eee;">${message}</p>
+            <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
+            <p><small style="color: #666;">This lead was generated from the contact form on <a href="https://roofovers.com">roofovers.com</a></small></p>
+          </div>
         `,
       }),
     });

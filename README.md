@@ -1,6 +1,6 @@
 # CSRS Roofovers - Modernized Website
 
-This is a modernized React/TypeScript version of the `roofovers.com` website, specifically designed for deployment on Cloudflare Pages.
+This is a modernized React/TypeScript version of the `roofovers.com` website, specifically designed for deployment on Cloudflare Pages using Vite.
 
 ### Features
 - **Responsive Design**: Optimized for both mobile and desktop viewports.
@@ -37,7 +37,7 @@ To activate the automated email system and ensure your website is fully function
 #### 4. Final Verification & Cloudflare Pages Settings
 - **Crucial**: In your Cloudflare Pages Dashboard, navigate to **Settings > Build & deployments**.
 - Ensure the following **Build settings** are configured:
-  - **Framework preset**: `Create React App`
+  - **Framework preset**: `Vite`
   - **Build command**: `npm run build`
   - **Build output directory**: `build`
 - **Wrangler Conflict Resolution**: We have removed the `wrangler.toml` file from the project root. Cloudflare's dashboard sometimes detects this file and incorrectly attempts to deploy the project as a **Worker** (using `npx wrangler deploy`) instead of a **Pages** project. Removing it ensures Cloudflare uses its standard Pages deployment flow.
@@ -46,6 +46,13 @@ To activate the automated email system and ensure your website is fully function
 - **Compatibility Date**: In **Settings > Functions > Compatibility date**, ensure it is set to `2024-04-12` or newer.
 - Redeploy your site to apply the changes.
 - Fill out the contact form to verify you receive the lead at `info@roofovers.com` and that the customer receives a branded "Thank You" message.
+
+#### 5. If Emails Land in Spam
+If emails from `leads@roofovers.com` are still being flagged as spam by your email provider:
+- **Mark as Not Spam**: In your inbox (Gmail, Outlook, etc.), find the email in the Spam folder and click "Not Spam" or "Report not spam". This "trains" your provider that these emails are legitimate.
+- **Add to Contacts**: Add `leads@roofovers.com` and `info@roofovers.com` to your email contact list.
+- **Check DNS**: Double-check the Resend dashboard to ensure all DKIM/SPF records are marked as "Verified".
+- **Whitelist**: If using a professional email service (like Google Workspace or Microsoft 365), you can create a filter to "Never send to Spam" for emails from `leads@roofovers.com`.
 
 ---
 
